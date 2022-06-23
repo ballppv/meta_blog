@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     before_save { self.email = email.downcase } # self ref. to each obj. from User class
-    has_many :articles
+    has_many :articles, dependent: :destroy
     validates :username,    presence: true, 
                             uniqueness: { case_sensitivity: false }, 
                             length: { minimum: 3, maximum: 25 }

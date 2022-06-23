@@ -9,6 +9,9 @@ gem "jquery-rails"
 gem 'bootstrap', '~> 5.1.3'
 gem "sassc-rails"
 gem 'turbo-rails'
+gem 'will_paginate', '~> 3.3'
+gem 'popper_js', '~> 2.9.3'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -55,10 +58,10 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", ">= 1.5.0"
+  gem "sqlite3", "~> 1.4"
 end
 
 group :development do
-  gem "sqlite3", "~> 1.4"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -69,7 +72,6 @@ group :development do
 end
 
 group :test do
-  gem "sqlite3", "~> 1.4"
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
