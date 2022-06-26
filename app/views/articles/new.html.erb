@@ -19,12 +19,20 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <%= f.label :category, class:"col-2 col-form-label text-light" %><br/>
+                    <div class="col-10">
+                        <%= f.collection_select(:category_ids, Category.all, :id, :name, 
+                        { prompt: "Select your category from the list below" }, { multiple: true, size: 4, class:"custom-select shadow rounded" }) %>
+                    </div>
+                </div>
+
                 <div class="form-group row justify-content-center">
                     <%= f.submit class:"col-2 btn btn-outline-light btn-lg" %>
                 </div>
             <% end %>
             <div class="mb-3">
-                <%= link_to '[Cancel and return]', articles_path, class: "link-danger" %>
+                <%= link_to '[Return to All Articles]', articles_path, class: "link-danger" %>
             </div>
         </div>
     </div>
